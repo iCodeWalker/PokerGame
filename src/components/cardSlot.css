@@ -1,0 +1,48 @@
+.CardStyle {
+  border: 1px solid grey;
+  padding: 20px;
+  margin: 30px;
+  margin-right: 50px;
+  margin-left: 50px;
+
+  width: 200px;
+  height: 350px;
+  background-image: linear-gradient(to right bottom, #fcbf49, #f77f00);
+}
+
+.front {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-style: italic;
+  color: black;
+  text-align: center;
+}
+.img_div {
+  margin: 20px;
+  height: 120px;
+  width: 120px;
+}
+
+@media screen and (max-width: 900px) {
+  .CardStyle {
+    padding: 10px;
+    margin: 3px;
+    margin-right: 5px;
+    margin-left: 30px;
+
+    width: 100px;
+    height: 170px;
+  }
+
+  .front {
+    font-size: 17px;
+  }
+  .img_div {
+    margin: 5px;
+    height: 80px;
+    width: 80px;
+  }
+}
