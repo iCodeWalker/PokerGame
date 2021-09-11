@@ -58,8 +58,8 @@ const SignInForm = (props) => {
         <DialogTitle id="form-dialog-title">Login To Continue</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Please Login to with your Email. Caution ---> Play wisely the game
-            is very addictive.
+            Please Login to with your Email. Caution --- Play wisely the game is
+            very addictive.
           </DialogContentText>
           <TextField
             value={email}

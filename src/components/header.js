@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actions from "../actions/index";
@@ -30,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = (props) => {
-  var token = localStorage.getItem("token");
   const classes = useStyles();
   var balance = props.auth.balance.toFixed(2);
   const handleLogout = () => {

@@ -1,9 +1,6 @@
 import { Route } from "react-router";
 import { Router, Switch } from "react-router-dom";
-import Header from "./components/header";
-import ScoreTable from "./components/scoreTable";
-import Footer from "./components/footer";
-import FullScreenDialog from "./components/modal";
+
 import history from "./history";
 import "./App.css";
 import HomeScreen from "./screens/HomeScreen";
