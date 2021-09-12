@@ -38,7 +38,6 @@ const SignInForm = (props) => {
     props.SignIn(email);
     setOpen(false);
   };
-  console.log(props.auth);
 
   return (
     <div>

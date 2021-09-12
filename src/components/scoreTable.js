@@ -18,7 +18,7 @@ const ScoreTable = (props) => {
     setCurrentPage(pageNumber);
   };
 
-  var tableData = [];
+  var tableData = [localStorage.getItem("CasinoGameData")];
   tableData = [...props.auth.gamedata];
   console.log(tableData);
 

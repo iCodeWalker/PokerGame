@@ -63,15 +63,9 @@ const Modal = (props) => {
   const [slot_3, setSlot_3] = useState(SPADES);
 
   var balance = props.auth.balance.toFixed(2);
-  // const [slotData, setSlotData] = useState([
-  //   {
-  //     id: 1,
-  //     slot1: 3,
-  //     slot2: 3,
-  //     slot3: 3,
-  //     time: "time",
-  //   },
-  // ]);
+  // const [slotData, setSlotData] = useState([]);
+
+  var slotData = [];
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -81,20 +75,16 @@ const Modal = (props) => {
     setOpen(false);
   };
 
-  // const addDataToStorage = (id, slot_1_data, slot_2_data, slot_3_data) => {
-  //   setSlotData([
-  //     ...slotData,
-  //     {
-  //       id: id,
-  //       slot1: slot_1_data,
-  //       slot2: slot_2_data,
-  //       slot3: slot_3_data,
-  //       time: new Date().toLocaleString(),
-  //     },
-  //   ]);
-
-  //   localStorage.setItem("CasinoGameData", JSON.stringify(slotData));
-  // };
+  const addDataToStorage = (id, slot_1_data, slot_2_data, slot_3_data) => {
+    slotData.push({
+      id: id,
+      slot1: slot_1_data,
+      slot2: slot_2_data,
+      slot3: slot_3_data,
+      time: new Date().toLocaleString(),
+    });
+    localStorage.setItem("CasinoGameData", JSON.stringify(slotData));
+  };
 
   const deckSymbols = [DIAMONDS, CLUBS, HEARTS, SPADES];
 
@@ -116,15 +106,9 @@ const Modal = (props) => {
       var ID = Math.floor(Math.random() * 10000);
       var date = new Date().toLocaleString();
       props.AddData(ID, randomName_1, randomName_2, randomName_3, date);
-      console.log(props);
+
       // props.AddDataToStorage(props.auth.gameData);
-      // addDataToStorage(
-      //   ID,
-      //   randomSelect_1,
-      //   randomSelect_2,
-      //   randomSelect_3,
-      //   date
-      // );
+      addDataToStorage(ID, slot_1, slot_2, slot_3, date);
 
       setIsFlipped(!isFlipped);
 
@@ -135,7 +119,9 @@ const Modal = (props) => {
         randomSelect_3
       );
     } else {
-      setErr("GAME OVER. You don't have balance to continue playing.");
+      setErr(
+        "GAME OVER. You don't have sufficient balance to continue playing."
+      );
     }
   };
 
@@ -143,6 +129,7 @@ const Modal = (props) => {
     setSlot_1(SPADES);
     setSlot_2(SPADES);
     setSlot_3(SPADES);
+    setErr("");
 
     props.CalculateBalance(props.auth.balance, 3, 3, 3);
     setIsFlipped(true);
