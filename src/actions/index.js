@@ -20,7 +20,7 @@ export const SignIn = (email) => {
 
 export const SignOut = () => {
   localStorage.removeItem("token");
-  //   localStorage.removeItem("CasinoGameData");
+  localStorage.removeItem("CasinoGameData");
   //   window.location.reload();
   return {
     type: SIGN_OUT,

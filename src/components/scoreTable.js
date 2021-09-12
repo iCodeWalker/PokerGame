@@ -26,6 +26,7 @@ const ScoreTable = (props) => {
   var casinoData = JSON.parse(localStorage.getItem("CasinoGameData"));
 
   const currentdata = casinoData.slice(indexOfFirstPost, indexOfLastPost);
+
   return (
     <div className="table_main">
       <div className="rows_div">

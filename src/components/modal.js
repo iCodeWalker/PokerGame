@@ -126,7 +126,7 @@ const Modal = (props) => {
       //   date
       // );
 
-      setIsFlipped(true);
+      setIsFlipped(!isFlipped);
 
       props.CalculateBalance(
         props.auth.balance,
@@ -147,6 +147,10 @@ const Modal = (props) => {
     props.CalculateBalance(props.auth.balance, 3, 3, 3);
     setIsFlipped(true);
   };
+
+  setTimeout(() => {
+    setIsFlipped(false);
+  }, 2000);
 
   return (
     <div>
