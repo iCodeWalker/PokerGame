@@ -8,7 +8,7 @@ const Footer = () => {
     <div>
       <Divider variant="middle" />
       <div className="footer_main">
-        <CopyrightIcon /> Vaibhav's Poker 1997-2021
+        <CopyrightIcon /> Satyam's Poker 1997-2021
       </div>
     </div>
   );
